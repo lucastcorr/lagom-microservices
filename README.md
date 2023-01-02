@@ -33,6 +33,11 @@ são explicadas durante o estudo da framework), como por exemplo a adição do c
 Para a implementação das entidades devem ser seguidas as indicações no seguinte link
 https://www.lagomframework.com/documentation/1.5.x/java/PersistentEntity.html
 
+O Serviço das notificações não precisa de qualquer persistência, podem subscrever o tópico e usar um pub-sub para enviarem a notificão para o websocket
+https://www.lagomframework.com/documentation/1.5.x/java/PubSub.html
+Para fazerem a ligação ao websocket podem usar o cliente Postman
+
+
 
 ## Nota
 
