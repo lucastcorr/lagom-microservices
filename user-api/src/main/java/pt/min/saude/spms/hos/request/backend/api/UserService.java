@@ -21,7 +21,7 @@ public interface UserService extends Service {
             .withCalls(
                     restCall(Method.POST, "/user", this::createUser),
                     restCall(Method.PATCH, "/user/:userId", this::updateUser),
-                    restCall(Method.GET, "/user/:userId/", this::getUserById),
+                    restCall(Method.GET, "/user/:userId", this::getUserById),
             );
     }
 }
