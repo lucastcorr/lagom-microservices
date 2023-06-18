@@ -11,9 +11,17 @@ public interface UserService extends Service {
 
     String SERVICE_NAME = "user-backend";
 
+    ServiceCall<Request, Response> createUser();
+    ServiceCall<Request, Response> updateUser();
+    ServiceCall<Request, Response> getUserById();
+
     @Override
     default Descriptor descriptor() {
         return named(SERVICE_NAME)
-            .withCalls();
+            .withCalls(
+                    restCall(Method.POST, "/user", this::createUser),
+                    restCall(Method.PATCH, "/user/:userId", this::updateUser),
+                    restCall(Method.GET, "/user/:userId/", this::getUserById),
+            );
     }
 }
