@@ -73,6 +73,8 @@ lazy val `challenge-backend` = (project in file("."))
   .aggregate(
     `user-api`, `user-impl`,
     `post-api`, `post-impl`,
+    `emoji-api`, `emoji-impl`,
+    `notification-api`, `notification-impl`,
   )
 
 /* ********************************************************************************************** */
@@ -160,3 +162,86 @@ lazy val `post-impl` = (project in file("post-impl"))
   )
   .settings(lagomForkedTestSettings: _*)
   .dependsOn(`post-api`)
+
+/* ********************************************************************************************** */
+/* ***************************************** EMOJI SERVICE ************************************** */
+/* ********************************************************************************************** */
+
+
+lazy val `emoji-api` = (project in file("emoji-api"))
+  .enablePlugins(BuildInfoPlugin)
+  .settings(
+    version := emojiAPIVersion,
+    libraryDependencies ++= Seq(
+      lagomJavadslApi,
+      lagomJavadslJackson,
+      configurations,
+      vavr,
+      vavrJackson,
+      lombok
+    ),
+    libraryDependencies ++= junit5Jupiter,
+    libraryDependencies ++= junitInterface
+  )
+
+lazy val `emoji-impl` = (project in file("emoji-impl"))
+  .enablePlugins(LagomJava, BuildInfoPlugin)
+  .settings(
+    version := emojiIMPLVersion,
+    libraryDependencies ++= Seq(
+      lagomJavadslJackson,
+      lagomJavadslPersistenceCassandra,
+      lagomJavadslKafkaBroker,
+      lagomLogback,
+      lagomJavadslTestKit,
+      lagomJavadslCluster,
+      filters,
+      configurations,
+      logback
+    ),
+    libraryDependencies ++= junit5Jupiter,
+    libraryDependencies ++= junitInterface,
+  )
+  .settings(lagomForkedTestSettings: _*)
+  .dependsOn(`emoji-api`)
+
+/* ********************************************************************************************** */
+/* ************************************* NOTIFICATION SERVICE *********************************** */
+/* ********************************************************************************************** */
+
+lazy val `notification-api` = (project in file("notification-api"))
+  .enablePlugins(BuildInfoPlugin)
+  .settings(
+    version := notificationAPIVersion,
+    libraryDependencies ++= Seq(
+      lagomJavadslApi,
+      lagomJavadslJackson,
+      configurations,
+      vavr,
+      vavrJackson,
+      lombok
+    ),
+    libraryDependencies ++= junit5Jupiter,
+    libraryDependencies ++= junitInterface
+  )
+
+lazy val `notification-impl` = (project in file("notification-impl"))
+  .enablePlugins(LagomJava, BuildInfoPlugin)
+  .settings(
+    version := notificationIMPLVersion,
+    libraryDependencies ++= Seq(
+      lagomJavadslJackson,
+      lagomJavadslPersistenceCassandra,
+      lagomJavadslKafkaBroker,
+      lagomLogback,
+      lagomJavadslTestKit,
+      lagomJavadslCluster,
+      filters,
+      configurations,
+      logback
+    ),
+    libraryDependencies ++= junit5Jupiter,
+    libraryDependencies ++= junitInterface,
+  )
+  .settings(lagomForkedTestSettings: _*)
+  .dependsOn(`notification-api`)
