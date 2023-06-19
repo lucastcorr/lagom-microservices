@@ -20,9 +20,9 @@ public interface PostService extends Service {
 
     String SERVICE_NAME = "post-backend";
 
-    ServiceCall<Request, Response> createPost();
-    ServiceCall<Request, Response> updatePost();
-    ServiceCall<Request, Response> getPostById();
+    ServiceCall<NotUsed, NotUsed> createPost();
+    ServiceCall<NotUsed, NotUsed> updatePost();
+    ServiceCall<NotUsed, NotUsed> getPostById();
 
     @Override
     default Descriptor descriptor() {
@@ -30,7 +30,8 @@ public interface PostService extends Service {
             .withCalls(
                     restCall(Method.POST, "/post", this::createPost),
                     restCall(Method.PATCH, "/post/:postId", this::updatePost),
-                    restCall(Method.GET, "/post/:postId", this::getPostById),
-            );
+                    restCall(Method.GET, "/post/:postId", this::getPostById)
+            )
+                .withAutoAcl(true);
     }
 }
