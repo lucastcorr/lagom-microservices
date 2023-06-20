@@ -18,6 +18,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ServiceCall<NotUsed, NotUsed> getUserById() {
+        
         return null;
     }
 }

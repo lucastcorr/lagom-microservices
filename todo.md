@@ -21,7 +21,7 @@ Implementação de microsserviços à fim de validar conhecimentos
 
 ## RNFs (Requisitos não-funcionais)
 
-- [ ] O Notification Service não precisa de persistência, ao invś disso utilizar um 
+- [ ] O Notification Service não precisa de persistência, ao invés disso utilizar um 
       topico para sobrescrever e enviar informações ao Postman;
 - [ ] O Read Side deve dar suporte a PostgreSQL/Cassandra;
 - [ ] Pode ser utilizado o Table Plus para fazer a ligação com o banco de dados ao 
