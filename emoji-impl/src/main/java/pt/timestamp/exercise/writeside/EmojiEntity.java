@@ -2,6 +2,9 @@ package pt.timestamp.exercise.writeside;
 
 
 import com.lightbend.lagom.javadsl.persistence.PersistentEntity;
+import pt.timestamp.exercise.schema.EmojiState;
+import pt.timestamp.exercise.writeside.command.EmojiCommand;
+import pt.timestamp.exercise.writeside.event.EmojiEvent;
 
 import java.util.Optional;
 

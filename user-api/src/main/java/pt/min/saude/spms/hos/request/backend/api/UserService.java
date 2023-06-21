@@ -14,9 +14,9 @@ public interface UserService extends Service {
 
     String SERVICE_NAME = "user-backend";
 
-    ServiceCall<NotUsed, NotUsed> createUser();
-    ServiceCall<NotUsed, NotUsed> updateUser();
-    ServiceCall<NotUsed, NotUsed> getUserById();
+    ServiceCall<NotUsed, String> createUser();
+    ServiceCall<NotUsed, String> updateUser();
+    ServiceCall<NotUsed, String> getUserById();
 
     @Override
     default Descriptor descriptor() {

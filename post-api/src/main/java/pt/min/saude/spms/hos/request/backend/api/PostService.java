@@ -20,9 +20,9 @@ public interface PostService extends Service {
 
     String SERVICE_NAME = "post-backend";
 
-    ServiceCall<NotUsed, NotUsed> createPost();
-    ServiceCall<NotUsed, NotUsed> updatePost();
-    ServiceCall<NotUsed, NotUsed> getPostById();
+    ServiceCall<NotUsed, String> createPost();
+    ServiceCall<NotUsed, String> updatePost();
+    ServiceCall<NotUsed, String> getPostById();
 
     @Override
     default Descriptor descriptor() {

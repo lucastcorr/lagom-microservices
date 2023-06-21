@@ -14,9 +14,9 @@ public interface EmojiService extends Service {
 
     String SERVICE_NAME = "emoji-backend";
 
-    ServiceCall<NotUsed, NotUsed> createEmoji();
-    ServiceCall<NotUsed, NotUsed> updateEmoji();
-    ServiceCall<NotUsed, NotUsed> getEmojiById();
+    ServiceCall<NotUsed, String> createEmoji();
+    ServiceCall<NotUsed, String> updateEmoji();
+    ServiceCall<NotUsed, String> getEmojiById();
 
     @Override
     default Descriptor descriptor() {
