@@ -8,7 +8,7 @@ Implementação de microsserviços à fim de validar conhecimentos
 - [ ] Emoji Service deve ser capaz de guardar informações do emoji;
 - [ ] Notification Service deve ser capaz de enviar as informações sobre o post 
       criado para um Websocket (Postman);
-- [ ] Os services Post, User e Emoji devem conter também um método GET por id;
+- [x] Os services Post, User e Emoji devem conter também um método GET por id;
 
 
 ## RNs (Regras de negócio)
